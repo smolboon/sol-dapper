@@ -9,7 +9,7 @@ Sol-Dapper is an AI-powered development platform that generates complete Solana 
 - 🤖 **AI-Powered Generation**: Create complete Solana dApps from natural language descriptions
 - ⚡ **Instant Preview**: Run generated applications immediately in the browser using WebContainer
 - 🔐 **Privy Authentication**: Seamless wallet integration with Solana and Ethereum support
-- 📁 **Project Management**: Save, organize, and iterate on your generated projects
+- 📁 **Project Management**: Save, organize, and iterate on your generated projects.
 - 🌐 **Real-time Streaming**: Watch your code being generated in real-time with live status updates
 - 🎯 **File Management**: Interactive file tree with syntax highlighting and editing capabilities
 - 📱 **Responsive Design**: Beautiful, modern UI built with TailwindCSS and Shadcn/UI
