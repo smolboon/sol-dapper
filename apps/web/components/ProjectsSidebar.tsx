@@ -10,7 +10,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Separator } from "@/components/ui/separator";
 import {
   History,
   RefreshCw,
@@ -193,7 +192,7 @@ export function ProjectsSidebar({
         </div>
       </div>
 
-      <Separator className="opacity-50" />
+      <div className="mx-6" />
 
       {/* Projects List */}
       <div className="flex-1 min-h-0 overflow-hidden">
@@ -282,7 +281,7 @@ export function ProjectsSidebar({
                       No projects yet
                     </p>
                     <p className="text-xs text-muted-foreground/70 mt-1">
-                      Create your first project to get started
+                      One prompt &amp; voila
                     </p>
                   </div>
                 )}
@@ -321,7 +320,7 @@ export function ProjectsSidebar({
           className={`
             fixed left-0 w-80 
             bg-background/98 backdrop-blur-xl supports-[backdrop-filter]:bg-background/95 
-            border-r shadow-2xl shadow-black/5
+            shadow-2xl shadow-black/5
             z-40 transition-all duration-400 ease-out
             ${isHovered ? "translate-x-0" : "-translate-x-full"}
           `}

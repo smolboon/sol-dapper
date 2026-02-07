@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -305,19 +304,10 @@ export function WebContainerRunner({
         <CardHeader>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="h-8 w-8 flex items-center justify-center">
-                <Image
-                  src="/dapperGithub.jpg"
-                  alt="Sol-Dapper"
-                  width={32}
-                  height={32}
-                  className="object-cover"
-                />
-              </div>
               <div>
-                <CardTitle className="text-xl">WebContainer Runtime</CardTitle>
+                <CardTitle className="text-xl">Live Preview</CardTitle>
                 <p className="text-sm text-muted-foreground">
-                  Run your generated project in the browser
+                  Watch it go live in your browser
                 </p>
               </div>
             </div>

@@ -7,7 +7,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Image from "next/image";
+
+
 
 interface LoginFormProps extends React.ComponentProps<"div"> {
   onLogin: () => void;
@@ -18,24 +19,12 @@ export function LoginForm({ className, onLogin, ...props }: LoginFormProps) {
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card className="border border-border/60 shadow-lg bg-card/80 backdrop-blur-md">
         <CardHeader className="text-center space-y-4">
-          <div
-            className="inline-flex items-center justify-center w-20 h-20 mx-auto"
-            aria-hidden="true"
-          >
-            <Image
-              src="/dapperGithub.jpg"
-              alt="Sol-Dapper Logo"
-              width={80}
-              height={80}
-              className="object-cover"
-            />
-          </div>
           <div className="space-y-2">
             <CardTitle className="text-3xl font-bold tracking-tight drop-shadow-sm">
-              Welcome to Sol-Dapper
+              Boon
             </CardTitle>
             <CardDescription className="text-base drop-shadow-sm">
-              Build powerful Solana applications with AI assistance in minutes
+              One prompt. Watch it go live.
             </CardDescription>
           </div>
         </CardHeader>
@@ -44,23 +33,14 @@ export function LoginForm({ className, onLogin, ...props }: LoginFormProps) {
             <Button
               onClick={onLogin}
               size="lg"
-              className="w-full h-12 text-base font-medium transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
-              aria-label="Sign in with Privy"
+              className="w-full h-12 text-base font-medium"
+              aria-label="Get started"
             >
-              <Image
-                src="/dapperGithub.jpg"
-                alt="Sol-Dapper"
-                width={20}
-                height={20}
-                className="mr-2 object-cover"
-                aria-hidden="true"
-              />
-              Sign in with Privy
+              Get Started
             </Button>
           </div>
           <div className="text-center text-sm text-muted-foreground drop-shadow-sm">
-            Connect your wallet or sign in with email to begin creating
-            innovative Solana applications
+            Connect your wallet or sign in to start building
           </div>
         </CardContent>
       </Card>

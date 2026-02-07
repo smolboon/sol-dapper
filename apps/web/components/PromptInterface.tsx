@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { Separator } from "./ui/separator";
 import { ScrollArea } from "./ui/scroll-area";
 import {
   Select,
@@ -17,7 +16,6 @@ import {
 } from "./ui/select";
 import { Label } from "./ui/label";
 import { Send, Loader2, AlertCircle } from "lucide-react";
-import Image from "next/image";
 import { ProjectsSidebar } from "./ProjectsSidebar";
 import { AIResponseRenderer } from "./AIResponseRenderer";
 import { API_BASE_URL } from "../lib/api";
@@ -252,26 +250,16 @@ export function PromptInterface(): JSX.Element {
             <Card className="h-full border border-border/50 shadow-lg bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-6">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center">
-                    <Image
-                      src="/dapperGithub.jpg"
-                      alt="Sol-Dapper"
-                      width={48}
-                      height={48}
-                      className="object-cover"
-                    />
-                  </div>
                   <div>
                     <CardTitle className="text-2xl mb-2">
-                      Create Solana App
+                      Describe it. Build it.
                     </CardTitle>
                     <p className="text-muted-foreground leading-relaxed">
-                      Describe your application and AI will generate it for you
+                      One prompt &amp; watch it go live
                     </p>
                   </div>
                 </div>
               </CardHeader>
-              <Separator className="mx-6" />
               <CardContent className="flex-1 space-y-8 pt-8">
                 <div className="space-y-4">
                   <Label htmlFor="prompt" className="text-base font-medium">
@@ -371,56 +359,35 @@ export function PromptInterface(): JSX.Element {
             <Card className="flex min-h-0 flex-1 flex-col border border-border/50 shadow-lg bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-6">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center">
-                    <Image
-                      src="/dapperGithub.jpg"
-                      alt="Sol-Dapper"
-                      width={48}
-                      height={48}
-                      className="object-cover"
-                    />
-                  </div>
                   <div>
                     <CardTitle className="text-2xl mb-2">
-                      Generation Output
+                      Output
                     </CardTitle>
                     <p className="text-muted-foreground leading-relaxed">
-                      Real-time progress and results from AI generation
+                      Real-time generation progress
                     </p>
                   </div>
                 </div>
               </CardHeader>
-              <Separator className="mx-6" />
               <CardContent className="min-h-0 flex-1 p-0">
                 <ScrollArea className="h-full">
                   <div className="p-8">
                     {streamingResponse ? (
                       <AIResponseRenderer
                         response={streamingResponse}
-                        useBoilerplate={true} // Always use boilerplate for new projects
+                        useBoilerplate={true}
                         isStreaming={isGenerating}
-                        hasExistingProject={false} // Always new projects in PromptInterface
+                        hasExistingProject={false}
                       />
                     ) : (
                       <div className="flex h-[350px] items-center justify-center">
                         <div className="text-center space-y-6">
-                          <div className="flex h-20 w-20 items-center justify-center mx-auto">
-                            <Image
-                              src="/dapperGithub.jpg"
-                              alt="Sol-Dapper"
-                              width={80}
-                              height={80}
-                              className="object-cover opacity-60"
-                            />
-                          </div>
                           <div className="space-y-3">
                             <p className="font-semibold text-foreground text-xl">
-                              Ready to Generate
+                              Ready to generate
                             </p>
                             <p className="text-muted-foreground max-w-md leading-relaxed">
-                              Describe your Solana application and watch as AI
-                              generates your project in real-time with detailed
-                              progress updates
+                              Describe your app &amp; watch it come to life
                             </p>
                           </div>
                         </div>

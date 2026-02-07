@@ -59,7 +59,7 @@ const TooltipContent = React.forwardRef<
     ref={ref}
     sideOffset={sideOffset}
     className={cn(
-      "z-50 overflow-hidden rounded-md border border-[#333333] bg-[#1F2023] px-3 py-1.5 text-sm text-white shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+      "z-50 overflow-hidden rounded-[10px] border border-[#222] bg-[#0a0a0a] px-3 py-1.5 text-sm text-white shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
       className
     )}
     {...props}
@@ -94,7 +94,7 @@ const DialogContent = React.forwardRef<
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-[90vw] md:max-w-[800px] translate-x-[-50%] translate-y-[-50%] gap-4 border border-[#333333] bg-[#1F2023] p-0 shadow-xl duration-300 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 rounded-2xl",
+        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-[90vw] md:max-w-[800px] translate-x-[-50%] translate-y-[-50%] gap-4 border border-[#222] bg-[#0a0a0a] p-0 shadow-xl duration-300 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 rounded-[20px]",
         className
       )}
       {...props}
@@ -324,8 +324,8 @@ const PromptInput = React.forwardRef<HTMLDivElement, PromptInputProps>(
           <div
             ref={ref}
             className={cn(
-              "rounded-3xl border border-[#444444] bg-[#1F2023] p-2 shadow-[0_8px_30px_rgba(0,0,0,0.24)] transition-all duration-300",
-              isLoading && "border-red-500/70",
+              "rounded-[20px] border border-[#333] bg-[#0a0a0a] p-2 shadow-[0_8px_30px_rgba(0,0,0,0.24)] transition-all duration-300",
+              isLoading && "border-[#ff40bf]/70",
               className
             )}
             onDragOver={onDragOver}
@@ -504,7 +504,7 @@ export const PromptInputBox = React.forwardRef((props: PromptInputBoxProps, ref:
         isLoading={isLoading}
         onSubmit={handleSubmit}
         className={cn(
-          "w-full bg-[#1F2023] border-[#444444] shadow-[0_8px_30px_rgba(0,0,0,0.24)] transition-all duration-300 ease-in-out",
+          "w-full bg-[#0a0a0a] border-[#333] shadow-[0_8px_30px_rgba(0,0,0,0.24)] transition-all duration-300 ease-in-out",
           className
         )}
         disabled={isLoading}
@@ -548,16 +548,16 @@ export const PromptInputBox = React.forwardRef((props: PromptInputBoxProps, ref:
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute top-full left-0 mt-2 bg-[#1F2023] border border-[#333333] rounded-xl shadow-lg py-2 min-w-[200px] z-50"
+                      className="absolute top-full left-0 mt-2 bg-[#0a0a0a] border border-[#222] rounded-[10px] shadow-lg py-2 min-w-[200px] z-50"
                     >
                       {aiModels.map((model) => (
                         <button
                           key={model.value}
                           onClick={() => handleModelSelect(model.value)}
                           className={cn(
-                            "w-full px-3 py-2 text-left text-sm transition-colors hover:bg-[#2E3033]",
+                            "w-full px-3 py-2 text-left text-sm transition-colors hover:bg-[#ff40bf]/10",
                             selectedModel === model.value
-                              ? "text-white bg-[#2E3033]"
+                              ? "text-[#ff40bf] bg-[#ff40bf]/10"
                               : "text-gray-300"
                           )}
                         >
@@ -586,14 +586,14 @@ export const PromptInputBox = React.forwardRef((props: PromptInputBoxProps, ref:
               className={cn(
                 "h-8 w-8 rounded-full transition-all duration-200",
                 hasContent
-                  ? "bg-white hover:bg-white/80 text-[#1F2023]"
+                  ? "bg-[#ff40bf] hover:bg-[#ff40bf]/85 text-white"
                   : "bg-transparent hover:bg-gray-600/30 text-[#9CA3AF] hover:text-[#D1D5DB]"
               )}
               onClick={handleSubmit}
               disabled={isLoading || !hasContent}
             >
               {isLoading ? (
-                <Square className="h-4 w-4 fill-[#1F2023] animate-pulse" />
+                <Square className="h-4 w-4 fill-white animate-pulse" />
               ) : (
                 <ArrowUp className="h-4 w-4" />
               )}
