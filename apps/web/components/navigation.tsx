@@ -18,7 +18,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { ChevronDown, LogOut, Menu, Copy, Check } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggle } from "./theme-toggle";
 
@@ -82,21 +81,12 @@ export function Navigation({ user, onLogout }: NavigationProps) {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto flex h-16 w-full items-center justify-between px-12">
         {/* Logo */}
         <div className="flex items-center gap-6">
-          <Link href="/" className="flex items-center ">
-            <div className="flex h-10 w-10 items-center justify-center">
-              <Image
-                src="/dapperGithub.jpg"
-                alt="Sol-Dapper Logo"
-                width={40}
-                height={40}
-                className="object-cover"
-              />
-            </div>
-            <h1 className="text-2xl font-bold text-foreground">Sol-Dapper</h1>
+          <Link href="/" className="flex items-center gap-2">
+            <h1 className="text-2xl font-bold text-foreground">Boon</h1>
           </Link>
 
           {/* Navigation Links */}

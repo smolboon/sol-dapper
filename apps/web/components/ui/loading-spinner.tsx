@@ -1,7 +1,6 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import Image from "next/image"
 
 interface LoadingSpinnerProps {
   size?: "sm" | "md" | "lg" | "xl"
@@ -62,19 +61,11 @@ export function LoadingSpinner({
           />
           {showIcon && (
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className={cn("",
-                size === "sm" ? "h-2 w-2" :
-                size === "md" ? "h-3 w-3" : 
-                size === "lg" ? "h-4 w-4" : "h-6 w-6"
-              )}>
-                <Image 
-                  src="/dapperGithub.jpg" 
-                  alt="Sol-Dapper" 
-                  width={size === "sm" ? 8 : size === "md" ? 12 : size === "lg" ? 16 : 24}
-                  height={size === "sm" ? 8 : size === "md" ? 12 : size === "lg" ? 16 : 24}
-                  className="object-cover" 
-                />
-              </div>
+              <span className={cn("font-bold text-primary",
+                size === "sm" ? "text-[6px]" :
+                size === "md" ? "text-[8px]" :
+                size === "lg" ? "text-[10px]" : "text-xs"
+              )}>B</span>
             </div>
           )}
         </div>
@@ -113,25 +104,16 @@ export function PageLoader({ text = "Loading..." }: { text?: string }) {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-8">
       <div className="w-full max-w-lg mx-auto text-center">
-        <div className="inline-flex items-center justify-center w-20 h-20 mb-8">
-          <Image 
-            src="/dapperGithub.jpg" 
-            alt="Sol-Dapper Logo" 
-            width={80} 
-            height={80} 
-            className="object-cover" 
-          />
-        </div>
-        <h1 className="text-3xl font-bold text-foreground mb-3">Sol-Dapper</h1>
+        <h1 className="text-3xl font-bold text-foreground mb-3">Boon</h1>
         <p className="text-muted-foreground mb-12 text-lg leading-relaxed">
           {text}
         </p>
-        
+
         <div className="p-10 border border-border/50 shadow-lg bg-card/50 backdrop-blur-sm rounded-xl">
-          <LoadingSpinner 
-            variant="branded" 
-            size="xl" 
-            text="Loading..." 
+          <LoadingSpinner
+            variant="branded"
+            size="xl"
+            text="Loading..."
             className="w-full"
           />
         </div>

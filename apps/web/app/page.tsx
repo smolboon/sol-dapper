@@ -14,7 +14,6 @@ import { registerUser, API_BASE_URL } from "../lib/api"
 import { useRouter } from "next/navigation"
 import { useTheme } from "next-themes"
 import { AlertCircle } from "lucide-react"
-import Image from "next/image"
 
 type ProjectStatus = "creating" | "generating" | "completed" | "error"
 
@@ -234,7 +233,7 @@ export default function Home(): JSX.Element {
         {/* Main Content */}
         <main
           role="main"
-          aria-label="Sol-Dapper authentication"
+          aria-label="Boon authentication"
           className="relative z-10 min-h-screen flex items-center justify-center p-6"
         >
           <div className="w-full max-w-md mx-auto">
@@ -249,18 +248,9 @@ export default function Home(): JSX.Element {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-8">
         <div className="w-full max-w-lg mx-auto text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 mb-8">
-            <Image 
-              src="/dapperGithub.jpg" 
-              alt="Sol-Dapper Logo" 
-              width={80} 
-              height={80} 
-              className="object-cover" 
-            />
-          </div>
-          <h1 className="text-3xl font-bold text-foreground mb-3">Setting Up Your Account</h1>
+          <h1 className="text-3xl font-bold text-foreground mb-3">Setting up your workspace</h1>
           <p className="text-muted-foreground mb-12 text-lg leading-relaxed">
-            We&apos;re preparing your personalized workspace...
+            Hang tight...
           </p>
           
                       <Card className="p-10 border border-border/50 shadow-lg bg-card/50 backdrop-blur-sm">
@@ -305,18 +295,9 @@ export default function Home(): JSX.Element {
         <main className="flex-1 flex flex-col items-center justify-center p-12">
           <div className="w-full max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-16 h-16 mb-6">
-                <Image 
-                  src="/dapperGithub.jpg" 
-                  alt="Sol-Dapper Logo" 
-                  width={64} 
-                  height={64} 
-                  className="object-cover" 
-                />
-              </div>
-              <h1 className="text-3xl font-bold text-foreground mb-4 drop-shadow-sm">Create Your Solana App</h1>
+              <h1 className="text-4xl font-bold text-foreground mb-4 drop-shadow-sm">One prompt. Watch it go live.</h1>
               <p className="text-lg text-muted-foreground leading-relaxed drop-shadow-sm">
-                Describe your application idea and let AI generate a complete Solana project for you
+                Describe your Solana app &amp; voila
               </p>
             </div>
 
