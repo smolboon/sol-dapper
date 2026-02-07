@@ -6,6 +6,7 @@ import { Card } from "../components/ui/card"
 import { Navigation } from "../components/navigation"
 import { ProjectsSidebar } from "../components/ProjectsSidebar"
 import { LoginForm } from "../components/login-form"
+import { LandingPage } from "../components/landing-page"
 import { PromptInputBox } from "../components/ui/ai-prompt-box"
 import { ShaderAnimation } from "../components/ui/shader-animation"
 import { PageLoader, InlineLoader, LoadingSpinner } from "../components/ui/loading-spinner"
@@ -223,25 +224,7 @@ export default function Home(): JSX.Element {
   }
 
   if (!authenticated || !user) {
-    return (
-      <div className="min-h-screen relative flex flex-col">
-        {/* Shader Animation Background */}
-        <div className="fixed inset-0 z-0">
-          <ShaderAnimation />
-        </div>
-        
-        {/* Main Content */}
-        <main
-          role="main"
-          aria-label="Boon authentication"
-          className="relative z-10 min-h-screen flex items-center justify-center p-6"
-        >
-          <div className="w-full max-w-md mx-auto">
-            <LoginForm onLogin={login} />
-          </div>
-        </main>
-      </div>
-    );
+    return <LandingPage onGetStarted={login} />
   }
 
   if (isRegistering) {
